@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en" class="classic">
+<head>
+  <meta charset="utf-8">
+  <title>Shop</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="stylesheet" type="text/css" href="https://cdn.visa.com/3.7.1/assets/css/global.css" />
+  <link href="https://cdn.visa.com/3.0.0/assets/css/navigation.css" rel="stylesheet" type="text/css">
+  <link href="https://cdn.visa.com/3.0.0/assets/css/themes/classic/classic.css" rel="stylesheet" type="text/css">
+  <style>
+    .loading-dots {
+      position: relative;
+      left: -9999px;
+      width: 10px;
+      height: 10px;
+      border-radius: 5px;
+      background-color: #2c2c2c;
+      color: #2c2c2c;
+      box-shadow: 9999px 0 0 -5px;
+      margin-left: 20px;
+      animation: loading-dots 1.5s infinite linear;
+      animation-delay: 0.25s;
+    }
+    .loading-dots::before, .loading-dots::after {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      width: 10px;
+      height: 10px;
+      border-radius: 5px;
+      background-color: #2c2c2c;
+      color: #2c2c2c;
+    }
+    .loading-dots::before {
+      box-shadow: 9984px 0 0 -5px;
+      animation: loading-dots-before 1.5s infinite linear;
+      animation-delay: 0s;
+    }
+    .loading-dots::after {
+      box-shadow: 10014px 0 0 -5px;
+      animation: loading-dots-after 1.5s infinite linear;
+      animation-delay: 0.5s;
+    }
+
+    @keyframes loading-dots-before {
+      0% {
+        box-shadow: 9984px 0 0 -5px;
+      }
+      30% {
+        box-shadow: 9984px 0 0 2px;
+      }
+      60%, 100% {
+        box-shadow: 9984px 0 0 -5px;
+      }
+    }
+    @keyframes loading-dots {
+      0% {
+        box-shadow: 9999px 0 0 -5px;
+      }
+      30% {
+        box-shadow: 9999px 0 0 2px;
+      }
+      60%, 100% {
+        box-shadow: 9999px 0 0 -5px;
+      }
+    }
+    @keyframes loading-dots-after {
+      0% {
+        box-shadow: 10014px 0 0 -5px;
+      }
+      30% {
+        box-shadow: 10014px 0 0 2px;
+      }
+      60%, 100% {
+        box-shadow: 10014px 0 0 -5px;
+      }
+    }
+  </style>
+</head>
+<body style="margin: 0;">
+  <app-root></app-root>
+</body>
+</html>

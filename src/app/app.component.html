@@ -1,0 +1,225 @@
+<header id="vs-navigation-header">
+  <div class="vs-container vs-header-container">
+    <div class="vs-row vs-align-items-center vs-justify-content-end">
+      <div class="vs-col-auto">
+        <a class="vs-nav-logo" href="https://www.visa.com.br/"><img src="https://cdn.visa.com/v2/assets/images/logos/visa/blue/logo.png" alt="Visa Home"></a>
+      </div>
+      <div class="vs-col" style="position: static;">
+      </div>
+    </div>
+  </div>
+</header>
+<div 
+  class="vs-container-fluid" 
+  style="
+    background-color: #eee;
+    height: calc(100vh - 71px);
+    padding-top: 10px;"
+  >
+  <div 
+    class="vs-row"
+    style="height: 100%;">
+    <div class="vs-col-12">
+      <div 
+        class="vs-wrapper" 
+        style="
+          background-color: #fff; 
+          border-bottom: 1px solid #dedede;
+          border-radius: 5px; 
+          padding: 10px;
+          margin-bottom: 10px;
+        "
+      >
+        <p 
+          class="vs-text vs-meta"
+          style="margin: 0;">
+            Hi Joe, currently you are logged in with card ending in <b class="vs-h6">9912</b>
+            <a 
+              class="vs-link-cta vs-link-inline"
+              href="#"
+              style="margin-left: 10px;">Switch card</a>
+        </p>
+      </div>
+    </div>
+    <div 
+      class="vs-col-3"
+      style="height: calc(100% - 50px);"
+      >
+      <div 
+        class="vs-wrapper" 
+        style="
+          background-color: #fff; 
+          border-bottom: 1px solid #dedede;
+          border-radius: 5px;
+          height: calc(100% - 10px);
+          padding-top: 10px; 
+          padding-bottom: 10px;"
+      >
+        <h2 class="vs-h4 vs-p-1">
+          Conceirge
+        </h2>
+        <div
+          #scrollContent
+          class="vs-container-fluid"
+          style="
+            height: calc(100% - 115px);
+            overflow-y: auto;"
+          >
+          <div class="vs-client vs-row vs-no-gutters vs-justify-content-start">
+            <p 
+              class="vs-text vs-meta vs-col-auto" 
+              style="
+                background-color: #eee;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+                border-bottom-left-radius: 2px;
+                display: block;
+                padding: 10px;
+                max-width: 75%;
+              ">Hi Joe, How may I help you find the perfect thing?
+            </p>
+            <ul class="vs-ul vs-col-12">
+              <li 
+                style="
+                  display: inline-block; 
+                  margin-right: 5px;"
+              >
+                <button
+                  style="
+                    border: 0px;
+                    border-radius: 8px;
+                    background: #fcc015;
+                    font-size: 14px;
+                    padding: 6px 15px;
+                  "
+                >
+                  pill
+                </button>
+              </li>
+              <li 
+                style="
+                  display: inline-block; 
+                  margin-right: 5px;"
+              >
+                <button
+                  style="
+                    border: 0px;
+                    border-radius: 8px;
+                    background: #fcc015;
+                    font-size: 14px;
+                    padding: 6px 15px;
+                  "
+                >
+                  pill
+                </button>
+              </li>
+              <li 
+                style="
+                  display: inline-block; 
+                  margin-right: 5px;"
+              >
+                <button
+                  style="
+                    border: 0px;
+                    border-radius: 8px;
+                    background: #fcc015;
+                    font-size: 14px;
+                    padding: 6px 15px;
+                  "
+                >
+                  pill
+                </button>
+              </li>
+            </ul>
+          </div>
+          <div *ngFor="let message of conversation | async">
+            <div 
+              *ngIf="message.source === 'chatgpt'"  
+              class="vs-client vs-row vs-no-gutters vs-justify-content-start">
+              <p 
+                class="vs-text vs-meta vs-col-auto" 
+                style="
+                  background-color: #eee;
+                  border-top-left-radius: 10px;
+                  border-top-right-radius: 10px;
+                  border-bottom-right-radius: 10px;
+                  border-bottom-left-radius: 2px;
+                  padding: 10px;
+                  max-width: 75%;
+                ">Hi Joe, How may I help you find the perfect thing?
+              </p>
+              <ul>
+                <li><button>pill</button></li>
+              </ul>
+            </div>
+            <div 
+              *ngIf="message.source === 'user'"
+              class="vs-customer vs-row vs-no-gutters vs-justify-content-end">
+              <p 
+                class="vs-text vs-alt vs-meta vs-col-auto" 
+                style="
+                  background-color: #1434cb;
+                  border-top-left-radius: 10px;
+                  border-top-right-radius: 10px;
+                  border-bottom-right-radius: 2px;
+                  border-bottom-left-radius: 10px;
+                  padding: 10px; 
+                  max-width: 75%;
+                ">
+                {{message.fulfillmentDescription}}
+              </p>
+            </div>
+          </div>
+          <div class="vs-client vs-row vs-no-gutters vs-justify-content-start vs-loading">
+            <div 
+              style="
+                background-color: #eee;
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                border-bottom-right-radius: 10px;
+                border-bottom-left-radius: 2px; 
+                padding: 10px;
+                width: 70px;
+              "
+            >
+              <div class="loading-dots"></div>
+            </div>
+          </div>
+        </div>
+        <form class="vs-chat-input-group" (ngSubmit)="onSubmit(dialogForm)" #dialogForm="ngForm">
+          <input class="vs-text vs-meta" 
+            style="
+              background-color: #eee; 
+              border: none; 
+              border-radius: 5px;
+              display: inline-block;
+              margin: 4%;
+              padding: 10px;
+              width: 92%
+            "
+            placeholder="Message"
+            name="message"
+            id="message" 
+            ngModel
+          />
+        </form>
+      </div>
+    </div>
+    <div class="vs-col-9">
+      <div 
+        class="vs-wrapper" 
+        style="
+          background-color: #fff; 
+          border-bottom: 1px solid #dedede;
+          border-radius: 5px; 
+          padding-top: 10px; 
+          padding-bottom: 10px;"
+        >
+        <h2 class="vs-h4 vs-p-1">
+          Offers
+        </h2>
+      </div>
+    </div>
+  </div>
+</div>
